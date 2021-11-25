@@ -1,0 +1,48 @@
+## How to create private and public keys ?
+- Private and Public key should be created in PEM storage format with PKCS#8 certificate format.
+  - If you create it properly, then the certificates will have corresponding start and end line as follows:
+     - Public key: 
+            -----BEGIN PUBLIC KEY-----
+			MIIBIjANBgkqhkiu9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz+4X9TDlqbk+b7rqEBND
+			jA5ydsAjg6S7bJ5KkKNNV36qc8K50KPReHClLUWr3lxJnXTOTCgwk09FcEL0QstT
+			hNLIdESlsgIpslQlrXhTO/GKM1rqn19YUdaUKjj86MUmcB3/il1vXkGmyzpmmPal
+			tjoPFo32lad76HBDl1TzjxfkCo5GwLzPB1F06LEBIN8MBjXDpHErr4asP4YmfutB
+			3nfaGUv1jjzmOOaWSqMQcCpPkT4+Q6rIWMfutoTDkGHbevpAUOtbBWfvZ5FGBrGG
+			FmSSGVLzl1+wO8o6uk8DMDsqBKhEOJ2Diw1stDB2IeS9/apupvs1fydkg0aUqUD0
+			gwIDAQAB
+			-----END PUBLIC KEY-----
+     - Private key:
+            -----BEGIN PRIVATE KEY-----
+			MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDP7hf1MOWpuT5v
+			uuoQE0OMDnJ2wCODpLBsnkqQorockypzwrnQo9F4cKUtRaveXEmddM5MKDCTT0Vw
+			QvRCy1OE0sh0RaWyAimyVCWteFM78YozWuqfX1hR1pQqOPzoxSZwHf+KXW9eQabL
+			OmaY9qW2Og8Wj3aVoXvocEOXVPOPF+QKjkbAvM8HUXTosQEg3wwGNcOkcSuvhqw/
+			hiZ+60fishynadWOPOY45pZKoxBwKk+RPj5DqshYx+62hMOQYdt6+kBQ61sFZ+9n
+			kUYGsYYWZJIZUvOXX7A7yjq6TwsdfsderEQ4nYOLDWy0MHYh5L39qm6m+zV/J2SD
+			RpSpQPSDAgMBAAECggEBAIzjMQyMAzGLOQkPx0T5KI2fxGM+MVIjpv8SCkgSvncI
+			dopVaP474dUPznvsd1YFhkPQP3BO0wsdbVlxpHwVtROMlxJhlrIU0Rfp+FWf8BXv
+			xcqiUdOHERryoBYz4vn9i9vwF5QzVyCwr0mI2rfOd94PXOXWc21Tq9eFKedCQn2z
+			Y8HvDZuJeOSzkv8bS6fbMW9cfoC6Odo97xKHhT661cgN3/wNw4gAXA08LvNzIqhm
+			HHRhMOrveUT7R469EQHrf0sdererw3KMH6kmGxsK8U30EDVlsp+WVzuhsZNbLNqu
+			o/w3WPHxF9qY56Vq0If1py53+SE0g3K6eE7h0JxawhECgYEA52ESqHGfw+4V0JAQ
+			9Bcap9/KGqly12+s8UeN3PKrUNofGNgMy2c9Cnjer3jv4ayDuK2BPYNO/JuD1S0c
+			w39U7pV/NlT7TNO2ghl+QsoeXK6pFb5OuTwz7/YiggX+B5Imr5a+DkmKnvwj71t5
+			OmgFtt5s/sfGMwFhoy1zDmvov4UCgYEA5g5AC7DEHyjjUvmpo7SIXskTBLene2QX
+			J4sxU87el0kdCnttrdCAkTMcNHDnwjw9ASiV92xEqmFnTyao8zduTOy12BmId4c1
+			g12y389W8E25caucj9T6wWb1vOUtENhSIAp790XHazUCLIUC4brrW7pwNK6HknV7
+			n3+fKH0KLmcCgYBJR4E1P+ctknXuO/Jim/6hNEs57nikqoXHVLYlR+XiEXLP130V
+			3niCnI1KXa77djuxfasdfsdffdddscR+VhF8DnTfrEJ6rfakeryoXyQGjnqWnFMq
+			b1qzoOyE6YjutObzrXY76Cay+4AWCo52ZQOKSx+SAYtQFBvsJjTOWHa6UQKBgFQH
+			rHkYreo7wxzRuJblIFKO23WDp5c4bhehehethatisnw3rU4ptGxU4N5+xwh5fEbq
+			Diz7zPD29wdANcHw40cRxzIR0XjnWDKNjQKW90h6+1t7tYoL3zO5adT/WMCoYwb1
+			DWa6hCayjAK66tyMq98rcESt4zMp2mfd88KUOZ3NAoGBAKjzJZ5xkd6vPptUoYw3
+			SyjUawkYrA1IvyLuqOr77NF8tvbV2T12HvkkCFqrObP/MAL9q5WjHQ0ggIjmToNa
+			wi2rLKtY6CU90n0PRd6Blhl5/sm+2n6UPNpAi3V2pXK2t8HWcCTdu68N6pFCqRYQ
+			8tVcwBmp+Qx8DFgk7iM9SBkp
+			-----END PRIVATE KEY-----
+			
+### Commands to create private and public key files:
+    - openssl genpkey -out /rsa/private-key.pem -algorithm RSA -pkeyopt rsa_keygen_bits:2048
+    - openssl rsa -in /rsa/private-key.pem -pubout -out /rsa/public-key.pem
+            
+           
